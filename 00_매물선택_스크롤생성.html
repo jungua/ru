@@ -1,0 +1,410 @@
+<html lang="ko"><head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<title>방부장</title>
+    <link rel="stylesheet" type="text/css" href="css/bb_font.css">
+    <link rel="stylesheet" type="text/css" href="css/bb_default.css">
+	<link rel="stylesheet" type="text/css" href="http://m.bbjang.com/_global/assets/css/bb_pop.css">
+	<link rel="stylesheet" type="text/css" href="http://m.bbjang.com/assets/js/cropper/cropper.min.css">
+    <link rel="stylesheet" href="css/bb_regist.css" type="text/css">
+    <link rel="stylesheet" href="css/bb_write_msgs-storage-editor.css" type="text/css">
+    <link rel="stylesheet" href="http://m.bbjang.com/_global/assets/css/bb_ad.css" type="text/css">
+</head>
+<body>
+<div id="wrap">
+	<!-- 메인 헤더 -->
+    <div id="header" class="ht_45 bg_blue header_f">
+        <div class="btn_back">
+			<a href="javascript:void(0);" onclick="cl.goBack()"></a>
+		</div>
+		<h1 class="header_txt">등록하기</h1>
+        <div class="btn_package">
+            <div class="btn_note"><a href="javascript:void(0);" onclick="goHelp();">등록유의사항</a></div>
+            <div class="btn_gohome"><a href="javascript:void(0);" onclick="cl.finishWinAll();"><img src="http://image.bbjang.com/imgs/bbjang/img_button/logo_blue.png" alt="홈"></a></div>
+        </div>
+	</div>
+	<!-- // 메인 헤더 -->
+	<!-- 광고 영역 -->
+	<div class="ad_regist">
+        <div id="adDealLocFilter" class="card_ad_bg slct_ad_bg">
+            <span class="admin_write" style="position: absolute;"></span>
+            <div class="ad_first100 adv_card_item" id="adItem_739" data-adno="739" data-adposno="1" data-adconntype="i" data-adtel="" data-adurl="/advertise/intro/" onclick="Advertise.onclick()">
+            <img src="http://photo.bbjang.com/prg/bbImg.php?type=advBbj&amp;sdir=&amp;viewname=aKiAdoCJdolVamRnaHmDfoGDeYpSqaGZ">
+            </div>
+        </div>
+    </div>    
+    <!-- // 광고 영역 -->
+    <!-- 매물 종류 선택 설명 영역 -->
+    <div class="kind_offer">
+        <p class="offer_h">매물 종류를 선택해주세요</p>
+        <p class="offer_c">(매물종류를 선택하시면 상세정보 입력화면으로 이동합니다.)</p>
+    </div>
+    <!-- // 매물 종류 선택 설명 영역 -->
+    <!-- 매물대분류, 상세분류 타이틀 영역 -->
+    <ul class="kind_h">
+        <li>매물대분류</li>
+        <li>상세분류</li>
+    </ul>
+    <!-- // 매물대분류, 상세분류 타이틀 영역 -->
+    <!-- 매물종류 선택 영역 -->
+    <div class="slct_content">
+        <ul class="select_kind">
+            <li class="kind_l">
+                <ul class="offering_u">
+                    <!-- 매물대분류값 선택시 선택된 .offering_l에 .now_slct 클래스 추가되며 .next_select는 display:none->block; 상태가 됨-->
+                    <li class="offering_l">
+                        <a href="#">
+                            <span>아파트</span>
+                            <span class="next_select" style="display:none;">></span>
+                        </a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#">
+                            <span>원룸/오피스텔</span>
+                            <span class="next_select" style="display:none;">></span>
+                        </a>
+                    </li>
+                    <li class="offering_l now_slct">
+                        <a href="#">
+                            <span>상가점포</span>
+                            <span class="next_select">></span>
+                        </a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#">
+                            <span>사무실</span>
+                            <span class="next_select" style="display:none;">></span>
+                        </a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#">
+                            <span>공장/창고</span>
+                            <span class="next_select" style="display:none;">></span>
+                        </a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#">
+                            <span>건물</span>
+                            <span class="next_select" style="display:none;">></span>
+                        </a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#">
+                            <span>빌딩</span>
+                            <span class="next_select" style="display:none;">></span>
+                        </a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#">
+                            <span>주택</span>
+                            <span class="next_select" style="display:none;">></span>
+                        </a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#">
+                            <span>토지(땅)</span>
+                            <span class="next_select" style="display:none;">></span>
+                        </a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#">
+                            <span>펜션매매/임대</span>
+                            <span class="next_select" style="display:none;">></span>
+                        </a>    
+                    </li>
+                    <li class="offering_l">
+                        <a href="#">
+                            <span>게스트하우스</span>
+                            <span class="next_select" style="display:none;">></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="kind_l">
+                <ul class="offering_u" style="display:none;">
+                    <li class="offering_l">
+                        <a href="#"><span>아파트</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>미분양 아파트</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>신규분양 아파트</span></a>
+                    </li>
+                </ul>
+                <ul class="offering_u" style="display:none;">
+                    <li class="offering_l">
+                        <a href="#"><span>원룸</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>투룸</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>쓰리룸/포룸</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>하숙/고시원</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>주거용 오피스텔</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>오피스텔 분양권</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>기타</span></a>
+                    </li>
+                </ul>
+                <ul class="offering_u">
+                    <li class="offering_l">
+                        <a href="#"><span>신규입점</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>한식</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>고기전문점</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>일식/수산물/횟집</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>양식/돈가스/스파게티</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>중식</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>치킨/닭강정</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>김밥/우동/분식</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>피자/패스트푸드</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>카페/커피</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>제과/제빵/떡</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>편의점</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>호프/소주방/바/주점</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>반찬/부식/정육/수산</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>가구/의류</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>제화/액세서리</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>PC방</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>노래방</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>당구/볼링/오락</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>스포츠/운동</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>미용/네일/피부관리</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>화장품</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>사무/문구/컴퓨터</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>세탁/빨래</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>모텔/여관</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>사우나/찜질방</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>휴대폰 판매</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>자동차정비/카센터</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>병원/한의원</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>약국/한약방</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>주유소/충전소</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>소매/판매업</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>도매/유통업</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>학원/독서실</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>상가인수하실분</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>부동산함께쓰실분</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>기타</span></a>
+                    </li>
+                </ul>
+                <ul class="offering_u" style="display:none;">
+                    <li class="offering_l">
+                        <a href="#"><span>일반사무실</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>업무용 오피스텔</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>기타</span></a>
+                    </li>
+                </ul>
+                <ul class="offering_u" style="display:none;">
+                    <li class="offering_l">
+                        <a href="#"><span>공장</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>창고</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>기타</span></a>
+                    </li>
+                </ul>
+                <ul class="offering_u" style="display:none;">
+                    <li class="offering_l">
+                        <a href="#"><span>일반건물</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>상가건물</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>숙박/콘도</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>기타</span></a>
+                    </li>
+                </ul>
+                <ul class="offering_u" style="display:none;">
+                    <li class="offering_l">
+                        <a href="#"><span>빌딩</span></a>
+                    </li>
+                </ul>
+                <ul class="offering_u" style="display:none;">
+                    <li class="offering_l">
+                        <a href="#"><span>단독주택</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>연립빌라</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>다가구 주택</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>상가주택</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>전원주택</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>다세대주택</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>타운하우스</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>셰어하우스</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>도시형 생활주택</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>기타</span></a>
+                    </li>
+                </ul>
+                <ul class="offering_u" style="display:none;">
+                    <li class="offering_l">
+                        <a href="#"><span>전/답/녹지/대지</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>아파트대지</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>공장/창고</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>임야/과수원/잡종지</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>주차장/주유소용지</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>도로/철도용지</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>체육/공원/유원지/학교용지</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>목장용지/종교용지</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>하천/제방/수도용지</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>사적지/묘지</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>염전/양어장</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>기타</span></a>
+                    </li>
+                </ul>
+                <ul class="offering_u" style="display:none;">
+                    <li class="offering_l">
+                        <a href="#"><span>펜션매매</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>단기임대</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>중기임대</span></a>
+                    </li>
+                    <li class="offering_l">
+                        <a href="#"><span>장기임대</span></a>
+                    </li>
+                </ul>
+                <ul class="offering_u" style="display:none;">
+                    <li class="offering_l">
+                        <a href="#"><span>게스트하우스</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- // 매물종류 선택 영역 -->
+</div><!-- // wrap -->    
+</body>
+</html>

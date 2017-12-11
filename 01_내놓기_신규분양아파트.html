@@ -1,0 +1,706 @@
+<html lang="ko"><head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<title>방부장</title>
+    <link rel="stylesheet" type="text/css" href="css/bb_font.css">
+    <link rel="stylesheet" type="text/css" href="css/bb_default.css">
+	<link rel="stylesheet" type="text/css" href="http://m.bbjang.com/_global/assets/css/bb_pop.css">
+	<link rel="stylesheet" type="text/css" href="http://m.bbjang.com/assets/js/cropper/cropper.min.css">
+    <link rel="stylesheet" href="css/bb_regist.css" type="text/css">
+    <link rel="stylesheet" href="css/bb_write_msgs-storage-editor.css" type="text/css">
+    <link rel="stylesheet" href="http://m.bbjang.com/_global/assets/css/bb_ad.css" type="text/css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />  
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
+    <script>
+        $.datepicker.setDefaults({
+            dateFormat: 'yy-mm-dd',
+            prevText: '이전 달',
+            nextText: '다음 달',
+            monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            showMonthAfterYear: true,
+            yearSuffix: '년'
+        });
+
+        $(function() {
+            $("#datepicker1").datepicker();
+        });
+
+    </script>
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 메인 헤더 -->
+    <div id="header" class="ht_45 bg_blue header_f">
+        <div class="btn_back">
+			<a href="javascript:void(0);" onclick="cl.goBack()"></a>
+		</div>
+		<h1 class="header_txt">등록하기</h1>
+        <div class="btn_package">
+            <div class="btn_note"><a href="javascript:void(0);" onclick="goHelp();">등록유의사항</a></div>
+            <div class="btn_gohome"><a href="javascript:void(0);" onclick="cl.finishWinAll();"><img src="http://image.bbjang.com/imgs/bbjang/img_button/logo_blue.png" alt="홈"></a></div>
+        </div>
+	</div>
+	<!-- // 메인 헤더 -->
+	<!-- 등록 구분 -->
+	<div class="nav_wrap">
+		내놓기 <span class="nav_sub">부동산 매물 판매시</span>
+	</div>
+	<!-- // 등록 구분 -->
+	<div id="container">
+		<!-- 내놓기 -->
+        <div class="content_wrap">
+            <!-- 기본정보 -->
+            <div class="wt_list">
+                <h2 class="wt_info_tit">기본정보</h2>
+                <div class="info_type">
+                    <span class="tit_sub tit_cate">매물종류</span>
+                    <div class="txt_cate">
+                        아파트 > 신규분양아파트
+                    </div>
+                </div>
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">아파트검색</span>
+                        <ul class="slct_box_smpl smpl_pd_b">
+                            <li>
+                                <div class="slct_box">
+                                    <a href="javascript:void(0);" class="slct_st slct_off">시/도</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slct_box">
+                                    <a href="javascript:void(0);" class="slct_st slct_off">시/군/구</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slct_box">
+                                    <a href="javascript:void(0);" class="slct_st slct_off">읍/면/동</a>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="slct_box">
+                            <select class="slct_st slct_off">
+                                <option>아파트선택</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                            </select>
+                        </div>
+                        <div class="btn_chk_loca"><a href="#">위치 확인</a></div> <!-- 위치검색후 a링크에 'result_st' 클래스 추가//-->
+                        
+                        <!-- 위치검색결과 //--> 
+                        <div class="wrap_adrs" style="display:none;">
+                            <ul class="wt_address">
+                                <li>
+                                    <div class="adrs_tit">
+                                        도로명
+                                    </div>
+                                    <div class="adrs_txt ft_blue" id="roadAddrDiv">광주 서구 상무대로 760</div>
+                                </li>
+                                <li>
+                                    <div class="adrs_tit">
+                                        지번
+                                    </div>
+                                    <div class="adrs_txt ft_blue" id="jibunAddrDiv">광주 서구 마륵동 165-27</div>
+                                </li>
+                            </ul>
+                            <div class="address_chk">
+                                <div class="chk_wrap02">
+                                    <input name="bangAddrOpenYn" type="checkbox" class="chk_input02" id="bangAddrOpenYn">
+                                    <label for="bangAddrOpenYn" class="chk_lb02">상세주소 비공개</label>
+                                </div>
+                            </div>
+                            <div class="wt_map_wrap">
+                                <div id="map"></div>
+                                <div class="btn_re_srch" style="display:none;">
+                                    <a href="javascript:void(0);">주소검색</a>
+                                </div>
+                                <div class="btn_srch_adrs" style="display:none;">
+                                    <a href="javascript:void(0);">내 매물 주소 검색</a>
+                                </div>
+                                <div class="txt_detail_info" style="display:none;">상세한 매물 위치를 보여주려면<br>상세주소 비공개를 해제해주세요</div>
+                            </div>
+                        </div>
+                        <!--// 위치검색결과 -->
+                
+                    </div>
+                </div>
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">등록구분</span>
+                        <div class="radi_wrap">
+                            <div class="wt_radio_regi">
+                                <input type="radio" id="regi_class_Type01" name="bangMemSlct">
+                                <label for="regi_class_Type01">개인</label>
+                            </div>
+                            <div class="wt_radio_regi">
+                                <input type="radio" id="regi_class_Type02" name="bangMemSlct">
+                                <label for="regi_class_Type02">공인중개사</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">거래유형</span>
+                        <div class="radi_wrap">
+                            <div class="wt_radio">
+                                <input type="radio" id="dealType01" name="dealType" checked>
+                                <label for="dealType01">매매</label>
+                            </div>
+                            <div class="wt_radio radi_disable">
+                                <!--<input type="radio" id="dealType02" name="dealType">//-->
+                                <label for="dealType02">전세</label>
+                            </div>
+                            <div class="wt_radio radi_disable">
+                                <!--<input type="radio" id="dealType03" name="dealType">//-->
+                                <label for="dealType03">월세</label>
+                            </div>
+                            <div class="wt_radio radi_disable">
+                                <!--<input type="radio" id="dealType04" name="dealType">//-->
+                                <label for="dealType04">단기임대</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- '거래유형_매매' 인 경우 -->
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">매매가격</span>
+                        <div class="wt_input_txt">
+                            ( <span class="color_b">만</span> 원 )
+                        </div>
+                        <div class="input_wrap input_disable">
+                            <!--<input type="number" class="ft_bill">//-->
+                            <label class="input_disable_lb">상담요망</label>
+                        </div>
+                        <div class="chk_box font_r">
+                            <div class="chk_wrap02">
+                                <input type="checkbox" class="chk_input02" id="chk_inquiry_price_1" name="bangAmtSlctR" checked>
+                                <label for="chk_inquiriy_price_1" class="chk_lb02">상담요망</label>
+                            </div>
+                            <span class="chk_info_txt">※ 상담요망을 체크하시면 금액이 숨김 처리됩니다.</span>
+                        </div>    
+                    </div>
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">총분양가</span>
+                        <div class="wt_input_txt">
+                            ( <span class="color_b">만</span> 원 )
+                        </div>
+                        <div class="input_wrap">
+                            <input type="number" class="ft_bill">
+                            <!-- <label class="input_disable_lb">융자금 없음</label> //-->
+                        </div>
+                    </div>
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">융자가능금액</span>
+                        <div class="wt_input_txt">
+                            ( <span class="color_b">만</span> 원 )
+                        </div>
+                        <div class="input_wrap">
+                            <input type="number" class="ft_bill">
+                            <!-- <label class="input_disable_lb">융자금 없음</label> //-->
+                        </div>
+                        <div class="chk_box font_r">
+                            <div class="chk_wrap02">
+                                <input type="checkbox" class="chk_input02" id="chk_inquiry_price_2" name="bangAmtSlctR" value="">
+                                <label for="chk_inquiriy_price_2" class="chk_lb02">융자금 없음</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// '거래유형_매매' 인 경우 -->
+            </div>
+            <!-- // 기본정보 -->
+            <!-- 매물상세정보 -->
+            <div class="wt_list">
+                <h2 class="wt_detail_tit">매물상세정보</h2>
+                <div class="info_type">
+                    <div class="base_box">
+                       <div class="wid_50">
+                            <span class="tit_sub tit_wrap02">면적</span>
+                            <div class="wrap_detail02">
+                                <div class="slct_box">
+                                    <select class="slct_st slct_off">
+                                        <option>선택</option>
+                                        <option>50㎡</option>
+                                        <option>100㎡</option>
+                                        <option>112.4㎡</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wid_50">
+                            <div class="wrap_detail02 wrap_detail_r">
+                                <div class="area_box">
+                                    <input type="text">
+                                    <label class="area_lb">평</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="base_box">
+                       <div class="wid_50">
+                            <span class="tit_sub tit_wrap02">층수</span>
+                            <div class="wrap_detail02">
+                                <div class="slct_box">
+                                    <select class="slct_st slct_off">
+                                        <option>해당층</option>
+                                        <option>1층이상</option>
+                                        <option>10층이상</option>
+                                        <option>50층 이상</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wid_50">
+                            <div class="wrap_detail02 wrap_detail_r">
+                                <div class="slct_box">
+                                    <select class="slct_st slct_off">
+                                        <option>전체층</option>
+                                        <option>5층이상</option>
+                                        <option>10층이상</option>
+                                        <option>50층이상</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="base_box">
+                        <div class="wid_50">
+                            <span class="tit_sub tit_wrap02">방개수</span>
+                            <div class="wrap_detail02">
+                                <div class="slct_box">
+                                    <select class="slct_st slct_off">
+                                        <option>선택</option>
+                                        <option>1개 이상</option>
+                                        <option>2개 이상</option>
+                                        <option>10개 이상</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wid_50">
+                            <span class="tit_sub tit_wrap02">욕실수</span>
+                            <div class="wrap_detail02">
+                                <div class="slct_box">
+                                    <select class="slct_st slct_off">
+                                        <option>선택</option>
+                                        <option>1개 이상</option>
+                                        <option>2개 이상</option>
+                                        <option>3개 이상</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="base_box">
+                        <div class="wid_50">
+                            <span class="tit_sub tit_wrap02">방향</span>
+                            <div class="wrap_detail02">
+                                <div class="slct_box">
+                                    <select class="slct_st slct_off">
+                                        <option>선택</option>
+                                        <option>남향</option>
+                                        <option>남동향</option>
+                                        <option>확인필요</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wid_50">
+                            <span class="tit_sub tit_wrap02">현관유형</span>
+                            <div class="wrap_detail02">
+                                <div class="slct_box">
+                                    <select class="slct_st slct_off">
+                                        <option>선택</option>
+                                        <option>계단식</option>
+                                        <option>복도식</option>
+                                        <option>복합식</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap03">난방방식</span>
+                        <div class="wrap_detail03">
+                            <div class="radi_wrap">
+                                <div class="wt_radio_dt">
+                                    <input type="radio" id="dt_warm_Type01" name="bangWramSlct">
+                                    <label for="dt_warm_Type01">개별난방</label>
+                                </div>
+                                <div class="wt_radio_dt">
+                                    <input type="radio" id="dt_warm_Type02" name="bangWramSlct">
+                                    <label for="dt_warm_Type02">중앙난방</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap03">입주가능일</span>
+                        <div class="wrap_detail03">
+                            <div class="radi_wrap">
+                                <div class="wt_radio_dt">
+                                    <input type="radio" id="dt_date_Type01" name="bangDateSlct">
+                                    <label for="dt_date_Type01">즉시입주</label>
+                                </div>
+                                <div class="wt_radio_dt">
+                                    <input type="radio" id="dt_date_Type02" name="bangDateSlct">
+                                    <label for="dt_date_Type02">날짜협의</label>
+                                </div>
+                                <div class="wt_radio_dt">
+                                    <input type="radio" id="dt_date_Type03" name="bangDateSlct">
+                                    <label for="dt_date_Type03">날짜입력</label>
+                                </div>
+                                <input type="text" id="datepicker1" readonly>
+                            </div>
+                        </div>
+                        <div class="date_in" style="display:none;">
+                            날짜 : <span class="ft_blue">2017년 11월 16일</span>
+                            <div class="btn_slct_date"><a href="#">날짜선택</a></div>
+                        </div>
+                    </div>
+                    <div class="base_box">
+                       <span class="tit_sub tit_wrap03">옵션정보</span>
+                        <div class="wrap_detail03">
+                            <div class="wt_plus_op"><a href="#">옵션선택</a></div>
+                            <span class="option_info_txt">※옵션선택 버튼을 터치해주세요</span>
+                        </div>
+                        <div class="wrap_option ft_blue"  style="display:none;">
+                            신발장, 무선인터넷, 붙박이장, 엘리베이터, 베란다, CCTV, 주차장, 신발장, 무선인터넷, 붙박이장, 엘리베이터, 베란다, CCTV, 주차장  
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            <!-- // 매물상세정보 -->
+            <!-- 상세설명 -->
+            <div class="wt_list">
+                <h2 class="wt_expl_tit">상세설명</h2>
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">제목<span class="lmt_lttr">( <span class="ft_blue ft_b">0</span> / 20자 )</span></span>
+                        <div class="input_wrap input_wrap_wt">
+                            <input type="text">
+                            <label class="input_lb">예) 리모델링 아파트 급매합니다.</label>
+                        </div>    
+                    </div>
+                </div>
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">상세설명<span class="lmt_lttr">( <span class="ft_blue ft_b">0</span> / 1000자 )</span></span>
+                        <div class="wt_mse"><a href="#">자주 사용하는 글</a></div>
+                        <div class="input_wrap input_wrap_wt wrap_textarea">
+                            <textarea></textarea>
+                            <label class="input_lb">
+                                ※ 매물의 장점, 특징 등을 자세하게 작성하여 주세요.<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;매물과 관계없는 내용은 자동 삭제 및 정지처리 됩니다.
+                            </label>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <!-- // 상세설명 -->
+            <!-- 사진등록 -->
+            <div class="wt_list">
+                <h2 class="wt_photo_tit">
+                    사진등록 <span class="font_r">(최대 20장)</span> 
+                    <div class="wt_plus">
+				        <a href="javascript:void(0);" onclick="photoUpload();">올리기</a>
+				    </div> 
+                </h2>
+                <div class="info_type">
+                    <div id="photoView" class="wt_photo_default">
+                        <div class="wt_photo_txt">
+                            ※ 매물사진을 자세하게 촬영하여 등록하시면<br>
+                            빠른 매물거래가 가능합니다.
+                        </div>
+                    </div>
+                    <style>
+                    .wt_photo_wrap .wt_photo {background:#2b2b2b;position:relative;overflow:hidden;}.wt_photo_wrap .wt_photo ul {width:99999px;height:225px;position:absolute;top:0px;left:0px;overflow:hidden;}.wt_photo_wrap .wt_photo ul li {float:left;width:100%;height:225px;}.wt_photo_wrap .wt_photo ul li img {position:absolute;top:50%;left:50%;transform:translate(-50%, -50%)}.photo_view_prev_white {position: absolute; left: -4px; top: 40%; margin-top: -24px; background-color: rgba(0,0,0,0); }.photo_view_next_white {position: absolute; right: -4px; top: 40%; margin-top: -24px; background-color: rgba(0,0,0,0); }.arrbtn_prev_white {position: absolute; top:50% width:80px; height: 70px; background-color: rgba(0,0,0,0); padding: 20px 40px; background-size: 9px 17px; z-index:100;}.arrbtn_next_white {position: absolute; top:50% width:80px; height: 70px; background-color: rgba(0,0,0,0); padding: 20px 40px; background-size: 9px 17px; z-index:100;}   
+                    </style>
+                    <div class="wt_photo_wrap" style="display:none;">
+                        <div class="wt_photo">
+                            <ul>
+                                <li imginfo="1_201711291819335842.jpg|750|651" style="float: none; position: absolute; top: 0px; width: 360px; left: 0px;">
+                                    <img src="http://photo.bbjang.com/prg/bbImg.php?type=photo&amp;sdir=tmp&amp;viewname=aKiAdoCJdolWcmRqaIKBeYSKeYqDm2Gcp7A." height="225" width="259.2165898617512">
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="photoPrev" class="arrbtn_prev_white photo_view_prev_white"><a href="javascript:void(0);"></a></div>
+                        <div id="photoPrev" class="arrbtn_prev_white dt_photo_view_prev"><a href="javascript:void(0);"></a></div>
+                        <div id="photoNext" class="arrbtn_next_white photo_view_next_white"><a href="javascript:void(0);"></a></div>
+                        <div id="photoNext" class="dt_photo_view_next"><a href="javascript:void(0);"></a></div>
+                        <div id="photoNo" class="wt_photo_frac">1 / 2</div>
+                        <div id="photoDel" class="wt_del_photo"><a href="javascript:void(0);" class="font_b">삭제하기</a></div>
+                    </div>
+                </div>
+            </div>
+            <!-- // 사진등록 -->
+            <!-- 등록자정보 -->
+            <div class="wt_list">
+                <h2 class="wt_agent_tit">
+                    등록자정보 
+                </h2>
+                <div class="wt_chk">
+                    <div class="chk_wrap02">
+                        <input name="telOpenYn" type="checkbox" class="chk_input02" id="chkHideSale">
+                        <label for="chkHideSale" class="chk_lb02">비공개</label>
+                    </div>
+                </div>
+                
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap03">이름</span>
+                        <div class="wrap_detail03">
+                            <div class="input_wrap input_wrap_wt">
+                                <input type="text" class="ft_bill">
+                                <label class="input_lb">최대 2자~12자</label>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap03">휴대폰번호</span>
+                        <div class="wrap_detail03">
+                            <div class="phone_num ft_blue">
+                                010-1234-5678
+                                <div class="btn_chg_num"><a href="#">변경</a></div>
+                            </div>
+                        </div>    
+                    </div>
+                    <!-- 관리자전용 연락처입력폼 
+                    <div class="wt_add">
+                        <div class="wt_add_title font_b">
+                            기본연락처 <span class="font_r">(필수)</span>
+                        </div>
+                        <ul class="wt_add_u">
+                            <li class="wt_add_l ins_mode">
+                                <div class="wt_num slct_box">
+                                    <select class="slct_st slct_on">
+                                        <option value="010">010</option><option value="02">02</option><option value="031">031</option><option value="032">032</option><option value="033">033</option><option value="041">041</option><option value="042">042</option><option value="043">043</option><option value="044">044</option><option value="051">051</option><option value="052">052</option><option value="053">053</option><option value="054">054</option><option value="055">055</option><option value="061">061</option><option value="062">062</option><option value="063">063</option><option value="064">064</option>
+                                     </select>
+                                </div>
+                                <div class="wt_num_bar">-</div>
+                                <div class="wt_num">
+                                    <div class="input_wrap">
+                                        <input name="bangMemPhone[1]" data-ul="bangMemPhone" id="bangMemPhoneM" class="input_ph_m_Sale input_add_phone" type="number" value="">
+                                    </div>
+                    
+                                </div>
+                                <div class="wt_num_bar">-</div>
+                                <div class="wt_num">
+                                    <div class="input_wrap">
+                                        <input name="bangMemPhone[2]" data-ul="bangMemPhone" id="bangMemPhoneL" class="input_ph_l_Sale input_add_phone" type="number" value="">
+                                    </div>
+                                </div>
+                                <div class="wt_add_btn"><a href="javascript:void(0);">등록</a></div>
+                            </li>
+                        </ul>
+                        <br>
+                    </div>
+                    <!--// 관리자전용 연락처입력폼 -->
+                </div>
+            </div>
+            <!-- // 등록자정보 -->
+        </div>
+        <!-- // 내놓기 -->
+
+		<!-- 하단 버튼 -->
+		<div class="wt_bot_wrap">
+            <!-- 작성시 버튼 -->
+            <div class="dt_btn_on" id="dtBtnOn">
+				<a href="javascript:void(0);" id="dealInsBtn">등록하기</a>
+            </div>
+            <!-- // 작성시 버튼 -->
+        </div>
+		<!-- // 하단 버튼 -->
+	</div>
+
+</div>
+<div class="full_bg_modal" id="fullBgModal" style="display:none;"></div>
+
+<!-- 시군구 검색팝업 -->
+<div class="layer_slct_cst" id="lLocLayer" style="display:none;">
+	<div class="pop_header">
+		<h2 class="bg_blue">시/도 선택</h2>
+		<a href="javascript:void(0);" class="pop_clse">닫기</a>
+	</div>
+	<ul>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_i" name="lLoc_code">
+                <label for="lLoc_code_i">서울</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_b" name="lLoc_code" checked="">
+                <label for="lLoc_code_b">경기</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_h" name="lLoc_code">
+                <label for="lLoc_code_h">부산</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_k" name="lLoc_code">
+                <label for="lLoc_code_k">인천</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_f" name="lLoc_code">
+                <label for="lLoc_code_f">대구</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_e" name="lLoc_code">
+                <label for="lLoc_code_e">광주</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_g" name="lLoc_code">
+                <label for="lLoc_code_g">대전</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_j" name="lLoc_code">
+                <label for="lLoc_code_j">울산</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_c" name="lLoc_code">
+                <label for="lLoc_code_c">경남</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_d" name="lLoc_code">
+                <label for="lLoc_code_d">경북</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_a" name="lLoc_code">
+                <label for="lLoc_code_a">강원</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_o" name="lLoc_code">
+                <label for="lLoc_code_o">충남</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_p" name="lLoc_code">
+                <label for="lLoc_code_p">충북</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_l" name="lLoc_code">
+                <label for="lLoc_code_l">전남</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_n" name="lLoc_code">
+                <label for="lLoc_code_n">전북</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_z" name="lLoc_code">
+                <label for="lLoc_code_z">세종</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_m" name="lLoc_code">
+                <label for="lLoc_code_m">제주</label>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--// 시군구 검색팝업 -->
+<!-- 주소검색팝업 -->
+<div class="pop_wrap" style="display:none;">
+	<div class="pop_container wid_98 mt_255 shadow">
+		<div class="pop_header">
+			<h2 class="bg_blue">주소검색</h2>
+			<a href="javascript:void(0);" class="pop_clse" id="addr_srch_close_btn" onclick="g_addrSearch.cleanup()">닫기</a>
+		</div>
+		<div class="pop_content pop_srch_ad" id="addrContainer">
+			<div id="addrOuter">
+				<div id="addrInner">
+					<div id="addrLayer" style="overflow: auto; display: block; width: 100%; height: 640px; top: 0px;"><div id="__daum__layer_1" style="position: relative; width: 100%; height: 460px; background-color: rgb(255, 255, 255); z-index: 0; overflow-x: hidden; overflow-y: auto; min-width: 300px; margin: 0px; padding: 0px;"><iframe frameborder="0" src="about:blank" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; border: 0px none; margin: 0px; padding: 0px; overflow: hidden; min-width: 300px;"></iframe></div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--// 주소검색팝업 -->
+<!-- 옵션정보선택 -->
+<div class="pop_slct_option" style="display:none;">
+	<div id="header" class="ht_45 bg_blue header_f">
+		<div class="btn_back">
+			<a href="javascript:void(0);" onclick="g_option.cleanup()">뒤로</a>
+		</div>
+		<h1 class="header_txt">옵션정보선택</h1>
+	</div>
+	<div class="option_contents">
+		<ul class="type_list" id="option_list">
+			<li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_former_door" class="chk_input" value="opt_former_door" data-name="optFormerDoor">		<label class="chk_lb" for="opt_former_door">전자도어락</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_system_aircon" class="chk_input" value="opt_system_aircon" data-name="optSystemAircon">		<label class="chk_lb" for="opt_system_aircon">시스템에어컨</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_builtin_fridge" class="chk_input" value="opt_builtin_fridge" data-name="optBuiltinFridge">		<label class="chk_lb" for="opt_builtin_fridge">빌트인냉장고</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_induction" class="chk_input" value="opt_induction" data-name="optInduction">		<label class="chk_lb" for="opt_induction">인덕션</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_sink" class="chk_input" value="opt_sink" data-name="optSink">		<label class="chk_lb" for="opt_sink">싱크대</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_shoe_rack" class="chk_input" value="opt_shoe_rack" data-name="optShoeRack">		<label class="chk_lb" for="opt_shoe_rack">신발장</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_bidet" class="chk_input" value="opt_bidet" data-name="optBidet">		<label class="chk_lb" for="opt_bidet">비데</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_builtin_wardrobe" class="chk_input" value="opt_builtin_wardrobe" data-name="optBuiltinWardrobe">		<label class="chk_lb" for="opt_builtin_wardrobe">붙박이장</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_elevator" class="chk_input" value="opt_elevator" data-name="optElevator">		<label class="chk_lb" for="opt_elevator">엘리베이터</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_veranda" class="chk_input" value="opt_veranda" data-name="optVeranda">		<label class="chk_lb" for="opt_veranda">베란다</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_parking" class="chk_input" value="opt_parking" data-name="optParking">		<label class="chk_lb" for="opt_parking">주차장</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_underground_parking" class="chk_input" value="opt_underground_parking" data-name="optUndergroundParking">		<label class="chk_lb" for="opt_underground_parking">지하주차장</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_laminate_floor" class="chk_input" value="opt_laminate_floor" data-name="optLaminateFloor">		<label class="chk_lb" for="opt_laminate_floor">강화마루</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_southward" class="chk_input" value="opt_southward" data-name="optSouthward">		<label class="chk_lb" for="opt_southward">남향</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_veranda_extend" class="chk_input" value="opt_veranda_extend" data-name="optVerandaExtend">		<label class="chk_lb" for="opt_veranda_extend">베란다확장</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_remodeling" class="chk_input" value="opt_remodeling" data-name="optRemodeling">		<label class="chk_lb" for="opt_remodeling">리모델링</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_part_repair" class="chk_input" value="opt_part_repair" data-name="optPartRepair">		<label class="chk_lb" for="opt_part_repair">부분수리</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_school_side" class="chk_input" value="opt_school_side" data-name="optSchoolSide">		<label class="chk_lb" for="opt_school_side">학교인접</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_view_good" class="chk_input" value="opt_view_good" data-name="optViewGood">		<label class="chk_lb" for="opt_view_good">전망좋음</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_traffic_good" class="chk_input" value="opt_traffic_good" data-name="optTrafficGood">		<label class="chk_lb" for="opt_traffic_good">교통좋음</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_sunshine_good" class="chk_input" value="opt_sunshine_good" data-name="optSunshineGood">		<label class="chk_lb" for="opt_sunshine_good">일조량좋음</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_school_zone_good" class="chk_input" value="opt_school_zone_good" data-name="optSchoolZoneGood">		<label class="chk_lb" for="opt_school_zone_good">학군좋음</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_in_clean" class="chk_input" value="opt_in_clean" data-name="optInClean">		<label class="chk_lb" for="opt_in_clean">내부깨끗</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_is_loan" class="chk_input" value="opt_is_loan" data-name="optIsLoan">		<label class="chk_lb" for="opt_is_loan">융자금있음</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_is_common_area_charge" class="chk_input" value="opt_is_common_area_charge" data-name="optIsCommonAreaCharge">		<label class="chk_lb" for="opt_is_common_area_charge">관리비있음</label>	</div></li><li class="type_1">	<div class="chk_wrap">		<input type="checkbox" id="opt_substitution" class="chk_input" value="opt_substitution" data-name="optSubstitution">		<label class="chk_lb" for="opt_substitution">대물가능</label>	</div></li>		</ul>
+	</div>
+	<div class="bottom_option">
+		<div class="btn_new">
+			<a href="javascript:void(0);" id="clearBtn">초기화</a>
+		</div>
+		<div class="btn_confirm">
+			<a href="javascript:void(0);" id="confirmBtn">확인</a>
+		</div>
+	</div>
+</div>
+<!--// 옵션정보선택 -->
+
+<script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=f717050d08c08642e96da8488274a0d0"></script>
+<script type="text/javascript">
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 마커가 표시될 위치입니다 
+var markerPosition  = new daum.maps.LatLng(33.450701, 126.570667); 
+
+// 마커를 생성합니다
+var marker = new daum.maps.Marker({
+    position: markerPosition
+});
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+</script>
+
+</body>
+</html>

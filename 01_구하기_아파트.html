@@ -1,0 +1,386 @@
+<html lang="ko"><head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<title>방부장</title>
+    <link rel="stylesheet" type="text/css" href="css/bb_font.css">
+    <link rel="stylesheet" type="text/css" href="css/bb_default.css">
+	<link rel="stylesheet" type="text/css" href="http://m.bbjang.com/_global/assets/css/bb_pop.css">
+	<link rel="stylesheet" type="text/css" href="http://m.bbjang.com/assets/js/cropper/cropper.min.css">
+    <link rel="stylesheet" href="css/bb_regist.css" type="text/css">
+    <link rel="stylesheet" href="css/bb_write_msgs-storage-editor.css" type="text/css">
+    <link rel="stylesheet" href="http://m.bbjang.com/_global/assets/css/bb_ad.css" type="text/css">
+</head>
+<body>
+
+<div id="wrap">
+	<!-- 메인 헤더 -->
+    <div id="header" class="ht_45 bg_blue header_f">
+        <div class="btn_back">
+			<a href="javascript:void(0);" onclick="cl.goBack()"></a>
+		</div>
+		<h1 class="header_txt">등록하기</h1>
+        <div class="btn_package">
+            <div class="btn_note"><a href="javascript:void(0);" onclick="goHelp();">등록유의사항</a></div>
+            <div class="btn_gohome"><a href="javascript:void(0);" onclick="cl.finishWinAll();"><img src="http://image.bbjang.com/imgs/bbjang/img_button/logo_blue.png" alt="홈"></a></div>
+        </div>
+	</div>
+	<!-- // 메인 헤더 -->
+	<!-- 등록 구분 -->
+	<div class="nav_wrap">
+		구하기 <span class="nav_sub">부동산 매물 구매시</span>
+	</div>
+	<!-- // 등록 구분 -->
+	<div id="container">
+		<!-- 내놓기 -->
+        <div class="content_wrap">
+            <!-- 기본정보 -->
+            <div class="wt_list">
+                <h2 class="wt_info_tit">기본정보</h2>
+                <div class="info_type">
+                    <span class="tit_sub tit_cate">매물종류</span>
+                    <div class="txt_cate">
+                        아파트 > 아파트
+                    </div>
+                </div>
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">희망거래유형</span>
+                        <div class="radi_wrap">
+                            <div class="wt_radio">
+                                <input type="radio" id="dealType01" name="dealType" checked>
+                                <label for="dealType01">매매</label>
+                            </div>
+                            <div class="wt_radio">
+                                <input type="radio" id="dealType02" name="dealType">
+                                <label for="dealType02">전세</label>
+                            </div>
+                            <div class="wt_radio">
+                                <input type="radio" id="dealType03" name="dealType">
+                                <label for="dealType03">월세</label>
+                            </div>
+                            <div class="wt_radio">
+                                <input type="radio" id="dealType04" name="dealType">
+                                <label for="dealType04">단기임대</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- '거래유형_매매' 인 경우 -->
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">희망매매가격</span>
+                        <div class="wt_input_txt">
+                            ( <span class="color_b">만</span> 원 )
+                        </div>
+                        <div class="input_wrap input_disable">
+                            <!--<input type="number" class="ft_bill">//-->
+                            <label class="input_disable_lb">상관없음</label>
+                        </div>
+                        <div class="chk_box font_r">
+                            <div class="chk_wrap02">
+                                <input type="checkbox" class="chk_input02" id="chk_inquiry_price_1" name="bangAmtSlctR" checked>
+                                <label for="chk_inquiriy_price_1" class="chk_lb02">상관없음</label>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <!--// '거래유형_매매' 인 경우 -->
+                <!-- '거래유형_전세' 인 경우 -->
+                <div class="info_type" style="display:none;">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">희망전세가격(보증금)</span>
+                        <div class="wt_input_txt">
+                            ( <span class="color_b">만</span> 원 )
+                        </div>
+                        <div class="input_wrap">
+                            <input type="number" class="ft_bill">
+                        </div>
+                        <div class="chk_box font_r">
+                            <div class="chk_wrap02">
+                                <input type="checkbox" class="chk_input02" id="chk_inquiry_price_1" name="bangAmtSlctR">
+                                <label for="chk_inquiriy_price_1" class="chk_lb02">상관없음</label>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <!--// '거래유형_전세' 인 경우 -->
+                <!-- '거래유형_월세·단기임대' 인 경우 -->
+                <div class="info_type" style="display:none;">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">희망보증금</span>
+                        <div class="wt_input_txt">
+                            ( <span class="color_b">만</span> 원 )
+                        </div>
+                        <div class="input_wrap">
+                            <input type="number" class="ft_bill">
+                        </div> 
+                    </div>
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">희망월세</span>
+                        <div class="wt_input_txt">
+                            ( <span class="color_b">만</span> 원 )
+                        </div>
+                        <div class="input_wrap">
+                            <input type="number" class="ft_bill">
+                        </div>
+                        <div class="chk_box font_r">
+                            <div class="chk_wrap02">
+                                <input type="checkbox" class="chk_input02" id="chk_inquiry_price_1" name="bangAmtSlctR">
+                                <label for="chk_inquiriy_price_1" class="chk_lb02">상관없음</label>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                <!--// '거래유형_월세·단기임대' 인 경우 -->
+            </div>
+            <!-- // 기본정보 -->
+            <!-- 매물상세정보 -->
+            <div class="wt_list">
+                <h2 class="wt_detail_tit">희망위치</h2>
+                <div class="info_type">
+                    <div class="base_box">
+                       <ul class="slct_box_smpl">
+                            <li>
+                                <div class="slct_box">
+                                    <a href="javascript:void(0);" class="slct_st slct_off">시/도</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slct_box slct_box_disa">
+                                    <a href="javascript:void(0);" class="slct_st">시/군/구</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="slct_box slct_box_disa">
+                                    <a href="javascript:void(0);" class="slct_st">읍/면/동</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>    
+                </div>
+            </div>
+            <!-- // 매물상세정보 -->
+            <!-- 상세설명 -->
+            <div class="wt_list">
+                <h2 class="wt_expl_tit">상세설명</h2>
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">제목<span class="lmt_lttr">( <span class="ft_blue ft_b">0</span> / 20자 )</span></span>
+                        <div class="input_wrap input_wrap_wt">
+                            <input type="text">
+                            <label class="input_lb">예) 논현동 24평형 신축 아파트 구매희망합니다.</label>
+                        </div>    
+                    </div>
+                </div>
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap01">상세설명<span class="lmt_lttr">( <span class="ft_blue ft_b">0</span> / 1000자 )</span></span>
+                        <div class="input_wrap input_wrap_wt wrap_textarea">
+                            <textarea></textarea>
+                            <label class="input_lb">
+                                ※ 희망하는 매물의 금액, 옵션정보들을 꼼꼼하게 작성하여 주세요. 매물과 관계없는 내용은 자동 삭제 및 정지처리 됩니다.
+                            </label>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <!-- // 상세설명 -->
+            <!-- 등록자정보 -->
+            <div class="wt_list">
+                <h2 class="wt_agent_tit">
+                    등록자정보 
+                </h2>
+                <div class="wt_chk">
+                    <div class="chk_wrap02">
+                        <input name="telOpenYn" type="checkbox" class="chk_input02" id="chkHideSale">
+                        <label for="chkHideSale" class="chk_lb02">비공개</label>
+                    </div>
+                </div>
+                <div class="info_type">
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap03">이름</span>
+                        <div class="wrap_detail03">
+                            <div class="input_wrap input_wrap_wt">
+                                <input type="text" class="ft_bill">
+                                <label class="input_lb">최대 2자~12자</label>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="base_box">
+                        <span class="tit_sub tit_wrap03">휴대폰번호</span>
+                        <div class="wrap_detail03">
+                            <div class="phone_num ft_blue">
+                                010-1234-5678
+                                <div class="btn_chg_num"><a href="#">변경</a></div>
+                            </div>
+                        </div>    
+                    </div>
+                    <!-- 관리자전용 연락처입력폼 
+                    <div class="wt_add">
+                        <div class="wt_add_title font_b">
+                            기본연락처 <span class="font_r">(필수)</span>
+                        </div>
+                        <ul class="wt_add_u">
+                            <li class="wt_add_l ins_mode">
+                                <div class="wt_num slct_box">
+                                    <select class="slct_st slct_on">
+                                        <option value="010">010</option><option value="02">02</option><option value="031">031</option><option value="032">032</option><option value="033">033</option><option value="041">041</option><option value="042">042</option><option value="043">043</option><option value="044">044</option><option value="051">051</option><option value="052">052</option><option value="053">053</option><option value="054">054</option><option value="055">055</option><option value="061">061</option><option value="062">062</option><option value="063">063</option><option value="064">064</option>
+                                     </select>
+                                </div>
+                                <div class="wt_num_bar">-</div>
+                                <div class="wt_num">
+                                    <div class="input_wrap">
+                                        <input name="bangMemPhone[1]" data-ul="bangMemPhone" id="bangMemPhoneM" class="input_ph_m_Sale input_add_phone" type="number" value="">
+                                    </div>
+                    
+                                </div>
+                                <div class="wt_num_bar">-</div>
+                                <div class="wt_num">
+                                    <div class="input_wrap">
+                                        <input name="bangMemPhone[2]" data-ul="bangMemPhone" id="bangMemPhoneL" class="input_ph_l_Sale input_add_phone" type="number" value="">
+                                    </div>
+                                </div>
+                                <div class="wt_add_btn"><a href="javascript:void(0);">등록</a></div>
+                            </li>
+                        </ul>
+                        <br>
+                    </div>
+                    <!--// 관리자전용 연락처입력폼 -->
+                </div>
+            </div>
+            <!-- // 등록자정보 -->
+        </div>
+        <!-- // 내놓기 -->
+
+		<!-- 하단 버튼 -->
+		<div class="wt_bot_wrap">
+            <!-- 작성시 버튼 -->
+            <div class="dt_btn_on" id="dtBtnOn">
+				<a href="javascript:void(0);" id="dealInsBtn">등록하기</a>
+            </div>
+            <!-- // 작성시 버튼 -->
+        </div>
+		<!-- // 하단 버튼 -->
+	</div>
+
+</div>
+<div class="full_bg_modal" id="fullBgModal" style="display:none;"></div>
+
+<!-- 시군구 검색팝업 -->
+<div class="layer_slct_cst" id="lLocLayer" style="display:none;">
+	<div class="pop_header">
+		<h2 class="bg_blue">시/도 선택</h2>
+		<a href="javascript:void(0);" class="pop_clse">닫기</a>
+	</div>
+	<ul>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_i" name="lLoc_code">
+                <label for="lLoc_code_i">서울</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_b" name="lLoc_code" checked="">
+                <label for="lLoc_code_b">경기</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_h" name="lLoc_code">
+                <label for="lLoc_code_h">부산</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_k" name="lLoc_code">
+                <label for="lLoc_code_k">인천</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_f" name="lLoc_code">
+                <label for="lLoc_code_f">대구</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_e" name="lLoc_code">
+                <label for="lLoc_code_e">광주</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_g" name="lLoc_code">
+                <label for="lLoc_code_g">대전</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_j" name="lLoc_code">
+                <label for="lLoc_code_j">울산</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_c" name="lLoc_code">
+                <label for="lLoc_code_c">경남</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_d" name="lLoc_code">
+                <label for="lLoc_code_d">경북</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_a" name="lLoc_code">
+                <label for="lLoc_code_a">강원</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_o" name="lLoc_code">
+                <label for="lLoc_code_o">충남</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_p" name="lLoc_code">
+                <label for="lLoc_code_p">충북</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_l" name="lLoc_code">
+                <label for="lLoc_code_l">전남</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_n" name="lLoc_code">
+                <label for="lLoc_code_n">전북</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_z" name="lLoc_code">
+                <label for="lLoc_code_z">세종</label>
+            </div>
+        </li>
+        <li>
+            <div class="ad_radio">
+                <input type="radio" id="lLoc_code_m" name="lLoc_code">
+                <label for="lLoc_code_m">제주</label>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--// 시군구 검색팝업 -->
+
+</body>
+</html>
